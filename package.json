@@ -80,7 +80,7 @@
   "peerDependencies": {
     "react": "*",
     "react-native": "*",
-    "react-native-vision-camera": "*",
+    "react-native-vision-camera": "*"
   },
   "workspaces": [
     "example"
