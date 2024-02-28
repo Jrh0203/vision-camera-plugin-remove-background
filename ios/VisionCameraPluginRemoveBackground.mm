@@ -1,14 +1,19 @@
-#import <React/RCTBridgeModule.h>
+#import <Foundation/Foundation.h>
+#import <VisionCamera/FrameProcessorPlugin.h>
+#import <VisionCamera/FrameProcessorPluginRegistry.h>
+#import <VisionCamera/Frame.h>
 
-@interface RCT_EXTERN_MODULE(VisionCameraPluginRemoveBackground, NSObject)
+@interface VisionCameraPluginRemoveBackground (FrameProcessorPluginLoader)
+@end
 
-RCT_EXTERN_METHOD(multiply:(float)a withB:(float)b
-                 withResolver:(RCTPromiseResolveBlock)resolve
-                 withRejecter:(RCTPromiseRejectBlock)reject)
+@implementation VisionCameraPluginRemoveBackground (FrameProcessorPluginLoader)
 
-+ (BOOL)requiresMainQueueSetup
++ (void)load
 {
-  return NO;
+    [FrameProcessorPluginRegistry addFrameProcessorPlugin:@"removeBackground"
+                                        withInitializer:^FrameProcessorPlugin* (VisionCameraProxyHolder* proxy, NSDictionary* options) {
+        return [[VisionCameraPluginRemoveBackground alloc] initWithProxy:proxy withOptions:options];
+    }];
 }
 
 @end
