@@ -15,6 +15,7 @@ extension UIImage {
   }
 }
 
+@available(iOS 15.0, *)
 @objc(VisionCameraPluginRemoveBackground)
 public class VisionCameraPluginRemoveBackground: FrameProcessorPlugin {
   public override init(proxy: VisionCameraProxyHolder, options: [AnyHashable: Any]! = [:]) {
@@ -61,8 +62,7 @@ public class VisionCameraPluginRemoveBackground: FrameProcessorPlugin {
       return url.path
   }
 
-  
-  private func blend(original framePixelBuffer: CVPixelBuffer,
+    private func blend(original framePixelBuffer: CVPixelBuffer,
                      mask maskPixelBuffer: CVPixelBuffer)  -> UIImage? {
     
     
