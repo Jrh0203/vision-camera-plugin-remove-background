@@ -1,4 +1,3 @@
-import VisionCamera
 import AVFoundation
 import CoreMedia
 import Vision
