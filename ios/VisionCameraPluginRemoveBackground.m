@@ -3,6 +3,8 @@
 #import <VisionCamera/FrameProcessorPluginRegistry.h>
 #import <VisionCamera/Frame.h>
 
+#import "VisionCameraPluginRemoveBackground-Swift.h"
+
 @interface VisionCameraPluginRemoveBackground (FrameProcessorPluginLoader)
 @end
 
